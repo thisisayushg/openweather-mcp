@@ -1,5 +1,6 @@
 from typing import Any, Dict, List, Optional
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
+
 import asyncio
 import logging
 import requests
@@ -470,4 +471,4 @@ if __name__ == "__main__":
         logger.warning("OpenWeather API key not found. Please set OPENWEATHER_API_KEY in your .env file.")
     
     # Run the MCP server
-    mcp.run()
+    mcp.run(transport="http", host="0.0.0.0", port=8000)
